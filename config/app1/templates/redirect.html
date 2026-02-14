@@ -1,0 +1,228 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Переадресация...</title>
+
+  <!-- <meta http-equiv="refresh" content="0; url=https://t.me/brusiya?text=Здравствуйте.%20Хочу%20записаться%20на%20пробное%20занятие%2e;"> -->
+  
+  <meta http-equiv="refresh" content="0; url=https://t.me/brusiya?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B5%20%D0%BF%D0%BE%20"> 
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <style>
+    img {
+      height: 10vh;
+    }
+  </style>
+  <meta http-equiv="refresh" content="30; url=/">
+</head>
+
+<body>
+
+<!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand header__logo" href="#">
+          <i class="fas fa-graduation-cap"></i>
+          <span>TutorVic</span>
+        </a>
+
+        <div class="header__mobile-actions d-lg-none">
+          <button data-subject="common" class="btn btn-primary header__btn header__btn--mobile">
+            Пробное занятие
+            <img src="{% static 'img/icons/free-white.png' %}" class="free-badge" alt="FREE">
+          </button>
+          <button class="navbar-toggler header__toggle" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse header__nav" id="navbarNav">
+          <ul class="navbar-nav me-auto header__menu">
+            <li class="nav-item">
+              <a class="nav-link header__link" href="#home">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header__link" href="#courses">Уроки</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header__link" href="#instructors">Преподаватели</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header__link" href="#about">О нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header__link" href="#testimonials">Отзывы</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header__link" href="#contact">Контакты</a>
+            </li>
+          </ul>
+
+          <div class="header__actions">
+            <button data-subject="common" class="btn btn-primary header__btn">
+              Пробное занятие - бесплатно
+              <img src="{% static 'img/icons/free-white.png' %}" class="free-badge" alt="FREE">
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- Content -->
+  <main>
+    <div class="container redirect">
+      <h1>Сейчас вы будете перенаправлены в Telegram...</h1>
+      <p>Если редирект не сработал, выберите удобный способ связи:</p>
+
+      <div class="redirect__icons">
+        <!-- <a href="https://t.me/brusiya?text=Здравствуйте.%20Хочу%20записаться%20на%20пробное%20занятие%2e" target="_blank"> -->
+        <a href="https://t.me/brusiya?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B5%20%D0%BF%D0%BE%20" target="_blank"></a>
+          <img src="{% static 'img/icons/tg.svg' %}" alt="Telegram">
+        </a>
+
+        <a href="https://www.avito.ru/brands/i357077454/all?sellerId=64205b3f65bcca3a453f21112dc09493" target="_blank">
+          <img src="{% static 'img/icons/avito.svg' %}" alt="Avito">
+        </a>
+
+        <a href="https://skype.com" target="_blank">
+          <img src="{% static 'img/icons/skype.svg' %}" alt="Skype">
+        </a>
+
+        <a href="https://teams.live.com/free/" target="_blank">
+          <img src="{% static 'img/icons/teams.svg' %}" alt="Teams">
+        </a>
+
+        <!-- <a href="https://api.whatsapp.com/send/?phone=79962201616&text=Здравствуйте.+Хочу+записаться+на+пробное+занятие.&type=phone_number&app_absent=0" target="_blank"> -->
+        <a href="https://api.whatsapp.com/send/?phone=79962201616&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.+%D0%A5%D0%BE%D1%87%D1%83+%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F+%D0%BD%D0%B0+%D0%BF%D1%80%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5+%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B5+%D0%BF%D0%BE+&type=phone_number&app_absent=0" target="_blank"></a>
+          <img src="{% static 'img/icons/whatsapp.svg' %}" alt="Whatsapp">
+        </a>
+      </div>
+
+      <p style="margin-top: 40px;">
+        <a href="/" class="main__button">Вернуться на главную</a>
+      </p>
+    </div>
+  </main>
+  
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer__brand">
+            <a class="footer__logo" href="#">
+              <i class="fas fa-graduation-cap"></i>
+              <span>TutorVic</span>
+            </a>
+            <p class="footer__description">
+              Индивидуальные занятия по математике, физике и информатике. Подготовка к ОГЭ и ЕГЭ с опытными
+              преподавателями.
+            </p>
+            <div class="footer__social">
+              <a href="#" class="footer__social-link">
+                <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill="none" width="20" height="20" style="filter: brightness(0) invert(1);">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier"> 
+                    <g style="stroke-width:8.63157;stroke-dasharray:none"> 
+                      <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:8.63157;stroke-dasharray:none;stroke-opacity:1" transform="translate(7.024 7.024) scale(.92683)"></path> 
+                      <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:8.63157;stroke-dasharray:none;stroke-opacity:1" transform="translate(7.024 7.024) scale(.92683)"></path> 
+                      <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:8.63157;stroke-dasharray:none;stroke-opacity:1" transform="translate(7.024 7.024) scale(.92683)"></path> 
+                      <path fill="#0af" d="M137.789 97.856c21.519 0 38.964-17.444 38.964-38.963 0-21.52-17.445-38.964-38.964-38.964-21.52 0-38.964 17.445-38.964 38.964s17.445 38.963 38.964 38.963z" style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:8.63157;stroke-dasharray:none;stroke-opacity:1" transform="translate(7.024 7.024) scale(.92683)"></path> 
+                    </g> 
+                  </g>
+                </svg>
+              </a>
+              <a href="#" class="footer__social-link">
+                <i class="fab fa-telegram"></i>
+              </a>
+              <a href="#" class="footer__social-link">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="#" class="footer__social-link">
+                <i class="fab fa-vk"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer__section">
+            <h4 class="footer__title">Предметы</h4>
+            <ul class="footer__list">
+              <li><a href="#" class="footer__link">Математика</a></li>
+              <li><a href="#" class="footer__link">Физика</a></li>
+              <li><a href="#" class="footer__link">Информатика</a></li>
+              <li><a href="#" class="footer__link">ОГЭ и ЕГЭ</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer__section">
+            <h4 class="footer__title">Компания</h4>
+            <ul class="footer__list">
+              <li><a href="#" class="footer__link">О нас</a></li>
+              <li><a href="#" class="footer__link">Карьера</a></li>
+              <li><a href="#" class="footer__link">Преподаватели</a></li>
+              <li><a href="#" class="footer__link">Контакты</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="footer__section">
+            <h4 class="footer__title">Контакты</h4>
+            <div class="footer__contact">
+              <div class="footer__contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Сочи, ул. Бзугу, 6</span>
+              </div>
+              <div class="footer__contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+7 996 220 16 16</span>
+              </div>
+              <div class="footer__contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>paltusyan@gmail.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="footer__divider">
+      <div class="row">
+        <div class="col-12">
+          <div class="footer__bottom">
+            <p class="footer__copyright">
+              © 2024 TutorVic Online School. Все права защищены.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

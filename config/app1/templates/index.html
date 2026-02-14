@@ -1,0 +1,1244 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TutorVic Online School - Онлайн уроки и обучение</title>
+  <meta name="description"
+    content="TutorVic Online School - платформа для онлайн обучения с лучшими курсами и преподавателями">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand header__logo" href="#">
+          <i class="fas fa-graduation-cap"></i>
+          <span>TutorVic</span>
+        </a>
+
+        <div class="header__mobile-actions d-lg-none">
+          <button data-subject="common" class="btn btn-primary header__btn header__btn--mobile">
+            Пробное занятие
+            <img src="{% static 'img/icons/free-white.png' %}" class="free-badge" alt="FREE">
+          </button>
+          <button class="navbar-toggler header__toggle" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse header__nav" id="navbarNav">
+          <ul class="navbar-nav me-auto header__menu">
+            <li class="nav-item">
+              <a class="nav-link header__link" href="#home">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header__link" href="#courses">Уроки</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header__link" href="#instructors">Преподаватели</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header__link" href="#about">О нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header__link" href="#testimonials">Отзывы</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header__link" href="#contact">Контакты</a>
+            </li>
+          </ul>
+
+          <div class="header__actions">
+            <button data-subject="common" class="btn btn-primary header__btn">
+              Пробное занятие - бесплатно
+              <img src="{% static 'img/icons/free-white.png' %}" class="free-badge" alt="FREE">
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero__background">
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="container">
+      <div class="row align-items-center min-vh-100">
+        <div class="col-lg-6">
+          <div class="hero__content" data-aos="fade-right">
+            <h1 class="hero__title">
+              Команда репетиторов <br><span class="hero__title--highlight">Разумная стоимость</span>
+            </h1>
+            <p class="hero__description">
+              Индивидуальные занятия по математике, физике и информатике. Повышайте успеваемость и готовьтесь к ЕГЭ и
+              ОГЭ с нашими преподавателями.
+            </p>
+            <div class="hero__stats">
+              <div class="hero__stat">
+                <span class="hero__stat-number">150+</span>
+                <span class="hero__stat-label">Студентов</span>
+              </div>
+              <div class="hero__stat">
+                <span class="hero__stat-number">3</span>
+                <span class="hero__stat-label">Предмета</span>
+              </div>
+              <div class="hero__stat">
+                <span class="hero__stat-number">5+</span>
+                <span class="hero__stat-label">Лет опыта</span>
+              </div>
+            </div>
+            <div class="hero__story-btn-wrapper">
+              <a href="#story" class="hero__story-btn">
+                <span class="hero__story-btn-text">Наша история</span>
+                <i class="fas fa-arrow-turn-down hero__story-btn-icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero__form" data-aos="fade-left">
+            <form class="registration-form">
+              <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
+              <h3 class="registration-form__title">Записаться на занятия</h3>
+
+              <div class="form-row">
+                <div class="form-group form-group--half">
+                  <label for="name" class="form-label">Имя</label>
+                  <input type="text" id="name" placeholder="Ваше имя" name="name" class="form-input" required>
+                </div>
+
+                <div class="form-group form-group--half">
+                  <label class="form-label">Предмет</label>
+                  <div class="multiselect-container">
+                    <div class="multiselect-trigger" id="subject-trigger">
+                      <span class="multiselect-placeholder">Выберите предмет</span>
+                      <i class="fas fa-chevron-down multiselect-arrow"></i>
+                    </div>
+                    <div class="multiselect-dropdown" id="subject-dropdown">
+                      <div class="multiselect-option">
+                        <input type="checkbox" id="subject-physics" name="subjects[]" value="physics">
+                        <label for="subject-physics">Физика</label>
+                      </div>
+                      <div class="multiselect-option">
+                        <input type="checkbox" id="subject-mathematics" name="subjects[]" value="mathematics">
+                        <label for="subject-mathematics">Математика</label>
+                      </div>
+                      <div class="multiselect-option">
+                        <input type="checkbox" id="subject-informatics" name="subjects[]" value="informatics">
+                        <label for="subject-informatics">Информатика</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group form-group--half">
+                  <label for="goal" class="form-label">Цель занятий</label>
+                  <select id="goal" name="goal" class="form-select" required>
+                    <option class="form-select__option" value="">Выберите цель</option>
+                    <option value="oge">ОГЭ</option>
+                    <option value="ege">ЕГЭ</option>
+                    <option value="improvement">Повышение успеваемости</option>
+                  </select>
+                </div>
+
+                <div class="form-group form-group--half">
+                  <label for="contact-method" class="form-label">Как связаться</label>
+                  <select id="contact-method" name="contact_method" class="form-select" required>
+                    <option value="">Выберите способ связи</option>
+                    <option value="telegram">Telegram</option>
+                    <option value="whatsapp">WhatsApp</option>
+                    <option value="phone">Телефон</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="form-label">Номер телефона</label>
+                <input type="tel" id="phone" name="phone" class="form-input phone-mask" placeholder="+7 (999) 123-45-67"
+                  maxlength="18" required>
+              </div>
+
+              <div class="form-group">
+                <label for="comment" class="form-label">Комментарий</label>
+                <textarea id="comment" name="comment" class="form-input" rows="2"
+                  placeholder="Расскажите о ваших целях, предпочтениях по времени занятий или любых других вопросах"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary registration-form__submit">
+                Отправить заявку
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Courses Section -->
+  <section class="featured-courses" id="courses">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-header text-center" data-aos="fade-up">
+            <h2 class="section-header__title">Подготовка к ЕГЭ и ОГЭ</h2>
+            <p class="section-header__description">
+              Индивидуальная подготовка по математике, физике и информатике
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="course-card">
+            <div class="course-card__image">
+              <img src="{% static 'img/courses/math.jpg' %}" alt="Математика ЕГЭ и ОГЭ">
+              <div class="course-card__badge">Популярный</div>
+            </div>
+            <div class="course-card__content">
+              <h3 class="course-card__title">{{ math_name }}</h3>
+              <p class="course-card__description">Подготовка к ЕГЭ и ОГЭ по математике.<br>Индивидуальный
+                подход.<br>Пробное занятие-консультация - <span class="free_lesson_marker">бесплатно!</span></p>
+              <div class="course-card__meta">
+                <div class="course-card__rating">
+                  <i class="fas fa-star"></i>
+                  <span>4.9</span>
+                  <span class="course-card__reviews">(56 отзывов)</span>
+                </div>
+                <div class="course-card__duration">
+                  <i class="fas fa-calendar"></i>
+                  <span>От 1 раза в неделю</span>
+                </div>
+              </div>
+              <div class="course-card__footer">
+                <div class="pricing-section">
+                  <div class="pricing-row">
+                    <div class="price-per-lesson">
+                      <span class="price-amount">{{ math_cost }}</span>
+                      <span class="price-unit">за урок (1 час)</span>
+                    </div>
+                    <button class="btn btn-primary course-card__btn" data-subject="math">Записаться</button>
+                  </div>
+                  <div class="pricing-row">
+                    <div class="price-package">
+                      <span class="price-package__new">{{ math_opt_cost }}</span>
+                      <span class="price-package__label">за {{ math_package_size }} уроков</span>
+                    </div>
+                    <div class="savings-info">
+                      <span class="price-package__old">{{ math_opt_cost_without_discount }}</span>
+                      <span class="savings-text">экономия {{ math_discount_percent }}%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="course-card">
+            <div class="course-card__image">
+              <img src="{% static 'img/courses/physics.jpg' %}" alt="Физика ЕГЭ и ОГЭ">
+              <div class="course-card__badge course-card__badge--new">Новый</div>
+            </div>
+            <div class="course-card__content">
+              <h3 class="course-card__title">{{ physics_name }}</h3>
+              <p class="course-card__description">Подготовка к ЕГЭ и ОГЭ по физике.<br>Индивидуальный подход.<br>Пробное
+                занятие-консультация - <span class="free_lesson_marker">бесплатно!</span></p>
+              <div class="course-card__meta">
+                <div class="course-card__rating">
+                  <i class="fas fa-star"></i>
+                  <span>5.0</span>
+                  <span class="course-card__reviews">(38 отзывов)</span>
+                </div>
+                <div class="course-card__duration">
+                  <i class="fas fa-calendar"></i>
+                  <span>От 1 раза в неделю</span>
+                </div>
+              </div>
+              <div class="course-card__footer">
+                <div class="pricing-section">
+                  <div class="pricing-row">
+                    <div class="price-per-lesson">
+                      <span class="price-amount">{{ physics_cost }}</span>
+                      <span class="price-unit">за урок (1 час)</span>
+                    </div>
+                    <button class="btn btn-primary course-card__btn" data-subject="physics">Записаться</button>
+                  </div>
+                  <div class="pricing-row">
+                    <div class="price-package">
+                      <span class="price-package__new">{{ physics_opt_cost }}</span>
+                      <span class="price-package__label">за {{ physics_package_size }} уроков</span>
+                    </div>
+                    <div class="savings-info">
+                      <span class="price-package__old">{{ physics_opt_cost_without_discount }}</span>
+                      <span class="savings-text">экономия {{ physics_discount_percent }}%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="course-card">
+            <div class="course-card__image">
+              <img src="{% static 'img/courses/informatics.jpg' %}" alt="Информатика ЕГЭ и ОГЭ">
+              <div class="course-card__badge">Популярный</div>
+            </div>
+            <div class="course-card__content">
+              <h3 class="course-card__title">{{ info_name }}</h3>
+              <p class="course-card__description">Подготовка к ЕГЭ и ОГЭ по информатике.<br>Индивидуальный
+                подход.<br>Пробное занятие-консультация - <span class="free_lesson_marker">бесплатно!</span></p>
+              <div class="course-card__meta">
+                <div class="course-card__meta">
+                  <div class="course-card__rating">
+                    <i class="fas fa-star"></i>
+                    <span>4.8</span>
+                    <span class="course-card__reviews">(42 отзыва)</span>
+                  </div>
+                  <div class="course-card__duration">
+                    <i class="fas fa-calendar"></i>
+                    <span>От 1 раза в неделю</span>
+                  </div>
+                </div>
+                <div class="course-card__footer">
+                  <div class="pricing-section">
+                    <div class="pricing-row">
+                      <div class="price-per-lesson">
+                        <span class="price-amount">{{ info_cost }}</span>
+                        <span class="price-unit">за урок (1 час)</span>
+                      </div>
+                      <button class="btn btn-primary course-card__btn" data-subject="informatics">Записаться</button>
+                    </div>
+                    <div class="pricing-row">
+                      <div class="price-package">
+                        <span class="price-package__new">{{ info_opt_cost }}</span>
+                        <span class="price-package__label">за {{ info_package_size }} уроков</span>
+                      </div>
+                      <div class="savings-info">
+                        <span class="price-package__old">{{ info_opt_cost_without_discount }}</span>
+                        <span class="savings-text">экономия {{ info_discount_percent }}%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Top Instructors Section -->
+  <section class="instructors" id="instructors">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-header text-center" data-aos="fade-up">
+            <h2 class="section-header__title">Наши преподаватели</h2>
+            <p class="section-header__description">
+              Квалифицированные специалисты с опытом подготовки к ЕГЭ и ОГЭ
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Первый ряд -->
+      <div class="instructors-grid">
+        
+        <div class="instructor-card text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="instructor-card__content">
+            <div class="instructor-card__top">
+              <div class="instructor-card__image">
+                <img src="{% static 'img/instructors/Vitaly2.jpg' %}" alt="Виталий" class="img-fluid">
+              </div>
+              <h3 class="instructor-card__name">Виталий</h3>
+              <p class="instructor-card__title">Математика</p>
+            </div>
+            <div class="instructor-card__middle">
+              <p class="instructor-card__description">4+ лет опыта подготовки к ЕГЭ и ОГЭ</p>
+            </div>
+            <div class="instructor-card__bottom">
+              <div class="instructor-card__rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.8</span>
+              </div>
+              <div class="instructor-card__stats">
+                <div class="instructor-card__stat">
+                  <span class="instructor-card__stat-number">1</span>
+                  <span class="instructor-card__stat-label">Предмет</span>
+                </div>
+                <div class="instructor-card__stat">
+                  <span class="instructor-card__stat-number">70+</span>
+                  <span class="instructor-card__stat-label">Студентов</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="instructor-card text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="instructor-card__content">
+            <div class="instructor-card__top">
+              <div class="instructor-card__image">
+                <img src="{% static 'img/instructors/Nikita.jpg' %}" alt="Валерий" class="img-fluid">
+              </div>
+              <h3 class="instructor-card__name">Никита</h3>
+              <p class="instructor-card__title">Математика и Физика</p>
+            </div>
+            <div class="instructor-card__middle">
+              <p class="instructor-card__description">Подготовка к ОГЭ и повышение успеваемости</p>
+            </div>
+            <div class="instructor-card__bottom">
+              <div class="instructor-card__rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.9</span>
+              </div>
+              <div class="instructor-card__stats">
+                <div class="instructor-card__stat">
+                  <span class="instructor-card__stat-number">2</span>
+                  <span class="instructor-card__stat-label">Предмета</span>
+                </div>
+                <div class="instructor-card__stat">
+                  <span class="instructor-card__stat-number">80+</span>
+                  <span class="instructor-card__stat-label">Студентов</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="instructor-card text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="instructor-card__content">
+            <div class="instructor-card__top">
+              <div class="instructor-card__image">
+                <img src="{% static 'img/instructors/Alex.jpg' %}" alt="Александр" class="img-fluid">
+              </div>
+              <h3 class="instructor-card__name">Александр</h3>
+              <p class="instructor-card__title">Информатика и Физика</p>
+            </div>
+            <div class="instructor-card__middle">
+              <p class="instructor-card__description">Специалист по программированию</p>
+            </div>
+            <div class="instructor-card__bottom">
+              <div class="instructor-card__rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.7</span>
+              </div>
+              <div class="instructor-card__stats">
+                <div class="instructor-card__stat">
+                  <span class="instructor-card__stat-number">2</span>
+                  <span class="instructor-card__stat-label">Предмета</span>
+                </div>
+                <div class="instructor-card__stat">
+                  <span class="instructor-card__stat-number">60+</span>
+                  <span class="instructor-card__stat-label">Студентов</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="instructor-card text-center" data-aos="fade-up" data-aos-delay="400">
+          <div class="instructor-card__content">
+            <div class="instructor-card__top">
+              <div class="instructor-card__image">
+                <img src="{% static 'img/instructors/red_diplom_man.jpg' %}" alt="Рамиль" class="img-fluid">
+              </div>
+              <h3 class="instructor-card__name">Рамиль</h3>
+              <p class="instructor-card__title">Информатика</p>
+            </div>
+            <div class="instructor-card__middle">
+              <p class="instructor-card__description">Специалист по подготовке к ЕГЭ и ОГЭ</p>
+            </div>
+            <div class="instructor-card__bottom">
+              <div class="instructor-card__rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.9</span>
+              </div>
+              <div class="instructor-card__stats">
+                <div class="instructor-card__stat">
+                  <span class="instructor-card__stat-number">1</span>
+                  <span class="instructor-card__stat-label">Предмет</span>
+                </div>
+                <div class="instructor-card__stat">
+                  <span class="instructor-card__stat-number">50+</span>
+                  <span class="instructor-card__stat-label">Студентов</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="instructor-card text-center" data-aos="fade-up" data-aos-delay="500">
+          <div class="instructor-card__content">
+            <div class="instructor-card__top">
+              <div class="instructor-card__image">
+                <img src="{% static 'img/instructors/Victor.jpg' %}" alt="Виктор" class="img-fluid" style="transform: rotate(14deg)">  <!--повернул Виктора на угол 14гр-->
+              </div>
+              <h3 class="instructor-card__name">Виктор</h3>
+              <p class="instructor-card__title">Физика</p>
+            </div>
+            <div class="instructor-card__middle">
+              <p class="instructor-card__description">Эксперт с опытом подготовки к олимпиадам</p>
+            </div>
+            <div class="instructor-card__bottom">
+              <div class="instructor-card__rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.8</span>
+              </div>
+              <div class="instructor-card__stats">
+                <div class="instructor-card__stat">
+                  <span class="instructor-card__stat-number">1</span>
+                  <span class="instructor-card__stat-label">Предмет</span>
+                </div>
+                <div class="instructor-card__stat">
+                  <span class="instructor-card__stat-number">40+</span>
+                  <span class="instructor-card__stat-label">Студентов</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <!-- <section class="statistics">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-card text-center">
+            <div class="stat-card__icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="stat-card__number" data-count="150">0</h3>
+            <p class="stat-card__label">+ студентов</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-card text-center">
+            <div class="stat-card__icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <h3 class="stat-card__number" data-count="3">0</h3>
+            <p class="stat-card__label">Предмета</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat-card text-center">
+            <div class="stat-card__icon">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h3 class="stat-card__number" data-count="3">0</h3>
+            <p class="stat-card__label">Преподавателя</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="stat-card text-center">
+            <div class="stat-card__icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <h3 class="stat-card__number" data-count="92">0</h3>
+            <p class="stat-card__label">% довольных студентов</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Story Section -->
+  <section class="story" id="story">
+    <div class="story__background">
+      <img src="{% static 'img/spb.png' %}" alt="Фон" class="story__bg-image">
+      <div class="story__overlay"></div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-header text-center" data-aos="fade-up">
+            <h2 class="section-header__title">История о нас</h2>
+          </div>
+        </div>
+      </div>
+      <div class="story__islands">
+        <div class="story__island story__island--left" data-aos="fade-right" data-aos-delay="100">
+          <div class="story__island-content">
+            <h3 class="story__island-title">Репетитор, ЕКБ</h3>
+            <p class="story__island-text story__island-text--short">Я репетитор из Екатеринбурга. Преподаю уже более четырех лет, за это время сталкивался с различными сложностями и ситуациями.</p>
+            <p class="story__island-text story__island-text--full">Работал с учениками разного уровня подготовки - от тех, кто только начинал изучать предмет, до тех, кто готовился к серьезным экзаменам и олимпиадам. Каждый ученик уникален, и я научился находить индивидуальный подход к каждому, адаптировать методику под конкретные потребности и цели.</p>
+            <button class="story__read-more-btn" type="button">
+              <span class="story__read-more-text">Читать подробнее</span>
+              <i class="fas fa-chevron-down story__read-more-icon"></i>
+            </button>
+          </div>
+        </div>
+        <svg class="story__connector story__connector--1" viewBox="0 0 200 100" preserveAspectRatio="none">
+          <defs>
+            <filter id="glow1">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <circle cx="100" cy="0" r="6" fill="rgba(255, 248, 235, 0.95)" filter="url(#glow1)"/>
+          <path d="M 100 6 Q 160 30, 100 50 Q 40 70, 100 94" 
+                fill="none" 
+                stroke="rgba(255, 245, 220, 0.85)" 
+                stroke-width="4" 
+                stroke-linecap="round"
+                filter="url(#glow1)"/>
+          <circle cx="100" cy="94" r="6" fill="rgba(255, 248, 235, 0.95)" filter="url(#glow1)"/>
+        </svg>
+        <div class="story__island story__island--right" data-aos="fade-left" data-aos-delay="200">
+          <div class="story__island-content">
+            <h3 class="story__island-title">Как формировал команду</h3>
+            <p class="story__island-text story__island-text--short">Формирование команды - это ответственный и тщательный процесс. При выборе преподавателей я обращаю внимание не только на профессиональные навыки и опыт, но и на личные качества.</p>
+            <p class="story__island-text story__island-text--full">Важно, чтобы человек был не просто знающим специалистом, но и умел находить общий язык с учениками, был терпеливым и заинтересованным в результате. Каждый преподаватель в нашей команде прошел личное собеседование, показал свой подход к работе и доказал, что может быть не просто учителем, а наставником, которому можно доверять. Мы работаем как единая команда, где каждый поддерживает друг друга и стремится к общему успеху наших учеников.</p>
+            <button class="story__read-more-btn" type="button">
+              <span class="story__read-more-text">Читать подробнее</span>
+              <i class="fas fa-chevron-down story__read-more-icon"></i>
+            </button>
+          </div>
+        </div>
+        <svg class="story__connector story__connector--2" viewBox="0 0 200 100" preserveAspectRatio="none">
+          <defs>
+            <filter id="glow2">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <circle cx="100" cy="0" r="6" fill="rgba(255, 248, 235, 0.95)" filter="url(#glow2)"/>
+          <path d="M 100 6 Q 40 30, 100 50 Q 160 70, 100 94" 
+                fill="none" 
+                stroke="rgba(255, 245, 220, 0.85)" 
+                stroke-width="4" 
+                stroke-linecap="round"
+                filter="url(#glow2)"/>
+          <circle cx="100" cy="94" r="6" fill="rgba(255, 248, 235, 0.95)" filter="url(#glow2)"/>
+        </svg>
+        <div class="story__island story__island--left" data-aos="fade-right" data-aos-delay="300">
+          <div class="story__island-content">
+            <h3 class="story__island-title">Чем отличаемся от других</h3>
+            <p class="story__island-text story__island-text--short">Мы предлагаем более выгодную цену на занятия, не жертвуя при этом качеством. Но главное наше отличие - это упор на душевную составляющую.</p>
+            <p class="story__island-text story__island-text--full">Мы не просто даем знания, мы создаем атмосферу доверия и поддержки. Каждый ученик для нас - это не просто клиент, а человек со своими особенностями, страхами и мечтами. Мы понимаем, что обучение - это не только про формулы и задачи, но и про мотивацию, уверенность в себе и преодоление трудностей. Наши преподаватели всегда готовы поддержать, объяснить еще раз, найти альтернативный способ подачи материала, если что-то непонятно. Мы верим, что образование должно быть доступным и комфортным для каждого.</p>
+            <button class="story__read-more-btn" type="button">
+              <span class="story__read-more-text">Читать подробнее</span>
+              <i class="fas fa-chevron-down story__read-more-icon"></i>
+            </button>
+          </div>
+        </div>
+        <svg class="story__connector story__connector--3" viewBox="0 0 200 100" preserveAspectRatio="none">
+          <defs>
+            <filter id="glow3">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <circle cx="100" cy="0" r="6" fill="rgba(255, 248, 235, 0.95)" filter="url(#glow3)"/>
+          <path d="M 100 6 Q 160 30, 100 50 Q 40 70, 100 94" 
+                fill="none" 
+                stroke="rgba(255, 245, 220, 0.85)" 
+                stroke-width="4" 
+                stroke-linecap="round"
+                filter="url(#glow3)"/>
+          <circle cx="100" cy="94" r="6" fill="rgba(255, 248, 235, 0.95)" filter="url(#glow3)"/>
+        </svg>
+        <div class="story__island story__island--right" data-aos="fade-left" data-aos-delay="400">
+          <div class="story__island-content">
+            <h3 class="story__island-title">Наша миссия</h3>
+            <p class="story__island-text story__island-text--short">Наша миссия - сделать качественное образование доступным для каждого. Мы убеждены, что каждый ученик заслуживает шанса получить хорошие знания и достичь своих целей.</p>
+            <p class="story__island-text story__island-text--full">Независимо от начального уровня подготовки или финансовых возможностей. Мы стремимся не просто подготовить к экзаменам, но и привить любовь к предмету, развить критическое мышление и уверенность в своих силах. Каждый успех нашего ученика - это и наш успех. Мы работаем для того, чтобы образование перестало быть чем-то недоступным или пугающим, а стало инструментом для достижения мечты.</p>
+            <button class="story__read-more-btn" type="button">
+              <span class="story__read-more-text">Читать подробнее</span>
+              <i class="fas fa-chevron-down story__read-more-icon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-12" data-aos="fade-up">
+          <div class="tech-equipment">
+            <h2 class="tech-equipment__title">Современные технологии обучения</h2>
+            <p class="tech-equipment__subtitle">Для максимально эффективных занятий используем:</p>
+            <div class="tech-equipment__items">
+              <div class="tech-item">
+                <div class="tech-item__icon">
+                  <i class="fas fa-chalkboard"></i>
+                </div>
+                <div class="tech-item__content">
+                  <h4 class="tech-item__title">Интерактивная доска Miro</h4>
+                  <p class="tech-item__description">Современная цифровая доска для наглядного объяснения материала</p>
+                </div>
+              </div>
+              <div class="tech-item">
+                <div class="tech-item__icon">
+                  <i class="fas fa-pen-fancy"></i>
+                </div>
+                <div class="tech-item__content">
+                  <h4 class="tech-item__title">Графический планшет</h4>
+                  <p class="tech-item__description">Точное письмо и рисование для детального разбора задач</p>
+                </div>
+              </div>
+              <div class="tech-item">
+                <div class="tech-item__icon">
+                  <i class="fas fa-video"></i>
+                </div>
+                <div class="tech-item__content">
+                  <h4 class="tech-item__title">Microsoft Teams</h4>
+                  <p class="tech-item__description">Стабильная платформа для онлайн-занятий с записью уроков</p>
+                </div>
+              </div>
+            </div>
+            <div class="tech-equipment__description">
+              <h3 class="description-title">О занятиях</h3>
+              <div class="description-content">
+                <p class="description-text">
+                  <strong>Продолжительность:</strong> каждое занятие длится 60 минут - это оптимальное время для глубокого изучения материала, решения задач и закрепления знаний.
+                </p>
+                <p class="description-text">
+                  <strong>Формат:</strong> индивидуальные занятия онлайн через Microsoft Teams. Все уроки записываются для повторного просмотра.
+                </p>
+                <p class="description-text">
+                  <strong>Программа:</strong> систематическая подготовка к ЕГЭ и ОГЭ по математике и информатике. Работаем с учениками 7-11 классов.
+                </p>
+                <p class="description-text">
+                  <strong>Подход:</strong> адаптируем программу под уровень каждого ученика. Разбираем теорию, решаем практические задачи, готовимся к экзаменам.
+                </p>
+                <p class="description-text">
+                  <strong>Результат:</strong> повышение успеваемости в школе, уверенная подготовка к экзаменам, развитие логического мышления.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-header text-center" data-aos="fade-up">
+            <h2 class="section-header__title">Отзывы студентов</h2>
+            <p class="section-header__description">
+              Что говорят наши студенты о своем опыте обучения
+            </p>
+            <div class="testimonials-link">
+              <a href="https://www.avito.ru/brands/i357077454" target="_blank" class="btn btn-outline-primary">
+                <i class="fas fa-external-link-alt"></i>
+                Читать все отзывы на Авито
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="swiper testimonials-swiper" data-aos="fade-up">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__content">
+                    <div class="testimonial-card__quote">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+
+                    <p class="testimonial-card__text">
+                      "Цена на сайте написана от 800, репетитор занимался с ребенком по школьной программе 7-го класса
+                      за один час 1200 р.
+                      Пока о результатах по двум занятиям сказать сложно. В беседе и во время занятий репетитор общался
+                      вежливо."
+                    </p>
+
+                    <div class="testimonial-card__author">
+                      <div class="testimonial-card__avatar">
+                        <img src="https://static.avito.ru/stub_avatars/%D0%98/3_48x48.png" alt="Ирина">
+                      </div>
+                      <div class="testimonial-card__info">
+                        <h4 class="testimonial-card__name">Ирина</h4>
+                        <p class="testimonial-card__position">Клиент</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__content">
+                    <div class="testimonial-card__quote">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                      "Евгений - не просто объясняет материал, Он его оживляет. Он показывает, как физические явления
+                      существуют повсюду.
+                      Даже теперь когда гуляю по улице, прогулка превращается в интересный экскурс. Теперь простые вещи
+                      кажутся не такими простыми.
+                      Что касается обучения, мне помогли подготовиться и поступить в лицей, в который я хотела попасть."
+                    </p>
+                    <div class="testimonial-card__author">
+                      <div class="testimonial-card__avatar">
+                        <img src="https://static.avito.ru/stub_avatars/%D0%9C/1_48x48.png" alt="Маша">
+                      </div>
+                      <div class="testimonial-card__info">
+                        <h4 class="testimonial-card__name">Маша</h4>
+                        <p class="testimonial-card__position">Клиент</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__content">
+                    <div class="testimonial-card__quote">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                      "Дочка отзанималась уже около пяти занятий. Честно говоря я в восторге, доче нравится.
+                      Также приятно была удивлена, что Евгений имеет знания дизайнерском деле.
+                      Помог спроектировать комнату для нашей маленькой Софии, ещё думаем над проектом гостинной."
+                    </p>
+                    <div class="testimonial-card__author">
+                      <div class="testimonial-card__avatar">
+                        <img
+                          src="https://20.img.avito.st/image/1/1.UPiEfbax6hFWumTVuSYbETLc9htWuv4T.jf2kr0SSuzdPz-bl6OndTF_pTj_0_NUawRyw8piERTI?cqp=2.pGdjs5fBvl5-fB-fm84xxYDAkt8GM2Wgr1fOyxua9Q=="
+                          alt="Ася">
+                      </div>
+                      <div class="testimonial-card__info">
+                        <h4 class="testimonial-card__name">Ася</h4>
+                        <p class="testimonial-card__position">Клиент</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__content">
+                    <div class="testimonial-card__quote">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                      "Доступно, эффективно, понятно. Брал репетитора для старшего сына, нужно было хоть как-то
+                      закончить 11 класс, имея оболтуса и 0 знаний в его голове - репетитор с этим справился и помог с
+                      экзаменами."
+                    </p>
+                    <div class="testimonial-card__author">
+                      <div class="testimonial-card__avatar">
+                        <img src="https://static.avito.ru/stub_avatars/%D0%90/3_48x48.png" alt="Андрей Клименко">
+                      </div>
+                      <div class="testimonial-card__info">
+                        <h4 class="testimonial-card__name">Андрей Клименко</h4>
+                        <p class="testimonial-card__position">Клиент</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__content">
+                    <div class="testimonial-card__quote">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                      "Замечательный репетитор! Ответил быстро и сразу согласился помочь. Всё объясняет очень понятно,
+                      без лишних заморочек. Цена адекватная. Однозначно порекомендую знакомым."
+                    </p>
+                    <div class="testimonial-card__author">
+                      <div class="testimonial-card__avatar">
+                        <img src="https://static.avito.ru/stub_avatars/%D0%98/1_48x48.png" alt="Исо Рахмонов">
+                      </div>
+                      <div class="testimonial-card__info">
+                        <h4 class="testimonial-card__name">Исо Рахмонов</h4>
+                        <p class="testimonial-card__position">Клиент</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__content">
+                    <div class="testimonial-card__quote">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                      "Занимаюсь с Виктором Анатольевичем примерно три месяца. Готовлюсь к огэ по физике. Сказать что я
+                      обескуражен той простотой объяснений, которые мне дает Виктор Анатольевич, ничего не сказать.
+                      Рекомендую вам этого преподавателя. Я получил пятерку за второй пробник."
+                    </p>
+                    <div class="testimonial-card__author">
+                      <div class="testimonial-card__avatar">
+                        <img src="https://static.avito.ru/stub_avatars/%D0%A8/1_48x48.png" alt="Шавкат">
+                      </div>
+                      <div class="testimonial-card__info">
+                        <h4 class="testimonial-card__name">Шавкат</h4>
+                        <p class="testimonial-card__position">Клиент</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__content">
+                    <div class="testimonial-card__quote">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                      "Евгений провел мне 4 занятия, я готовился к олимпиаде. Призером в этот раз не стал но думаю
+                      потому что поздно начал заниматься (за 2 недели начал). Но Евгению спасибо мне нравятся занятия."
+                    </p>
+                    <div class="testimonial-card__author">
+                      <div class="testimonial-card__avatar">
+                        <img src="https://static.avito.ru/stub_avatars/%D0%95/1_48x48.png" alt="Егор">
+                      </div>
+                      <div class="testimonial-card__info">
+                        <h4 class="testimonial-card__name">Егор</h4>
+                        <p class="testimonial-card__position">Клиент</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__content">
+                    <div class="testimonial-card__quote">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                      "Очень ответственный молодой человек. Хорошо объясняет, дочке нравится, все понятно. Всегда
+                      обратная связь, по результатам урока. Рекомендую!"
+                    </p>
+                    <div class="testimonial-card__author">
+                      <div class="testimonial-card__avatar">
+                        <img src="https://static.avito.ru/stub_avatars/%D0%9C/2_48x48.png" alt="Максим Петрухин">
+                      </div>
+                      <div class="testimonial-card__info">
+                        <h4 class="testimonial-card__name">Максим Петрухин</h4>
+                        <p class="testimonial-card__position">Клиент</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__content">
+                    <div class="testimonial-card__quote">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                      "Хочу поблагодарить Евгения. Готовился с ним к ОГЭ по математике, сдал на 5. Так понравилось, что
+                      решил теперь с ним готовиться к ЕГЭ по физике и математике."
+                    </p>
+                    <div class="testimonial-card__author">
+                      <div class="testimonial-card__avatar">
+                        <img src="https://static.avito.ru/stub_avatars/%D0%A0/1_48x48.png" alt="Радмир">
+                      </div>
+                      <div class="testimonial-card__info">
+                        <h4 class="testimonial-card__name">Радмир</h4>
+                        <p class="testimonial-card__position">Клиент</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__content">
+                    <div class="testimonial-card__quote">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                      "Провели с репетитором уже 2 занятия. Понятные и простые объяснения. Не думал что быстро пойму
+                      пределы, но оказалось наоборот."
+                    </p>
+                    <div class="testimonial-card__author">
+                      <div class="testimonial-card__avatar">
+                        <img src="https://static.avito.ru/stub_avatars/%D0%92/1_48x48.png" alt="Виктор Логинов">
+                      </div>
+                      <div class="testimonial-card__info">
+                        <h4 class="testimonial-card__name">Виктор Логинов</h4>
+                        <p class="testimonial-card__position">Клиент</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__content">
+                    <div class="testimonial-card__quote">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                      "Помог решить задачу по физике ЕГЭ, все объяснил, теперь умею решать."
+                    </p>
+                    <div class="testimonial-card__author">
+                      <div class="testimonial-card__avatar">
+                        <img src="https://static.avito.ru/stub_avatars/%D0%9A/1_48x48.png" alt="Кирилл">
+                      </div>
+                      <div class="testimonial-card__info">
+                        <h4 class="testimonial-card__name">Кирилл</h4>
+                        <p class="testimonial-card__position">Клиент</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__content">
+                    <div class="testimonial-card__quote">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                      "Созвонились, договорились, провели бесплатный пробный урок. Определили с чего начать и куда
+                      дальше двигаться! Теперь занимаемся 2 раза в неделю. Раз физикой, раз математикой. Готовимся к
+                      ОГЭ."
+                    </p>
+                    <div class="testimonial-card__author">
+                      <div class="testimonial-card__avatar">
+                        <img src="https://static.avito.ru/stub_avatars/%D0%92/2_48x48.png" alt="ООО Вальза">
+                      </div>
+                      <div class="testimonial-card__info">
+                        <h4 class="testimonial-card__name">ООО "Вальза"</h4>
+                        <p class="testimonial-card__position">Клиент</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer__brand">
+            <a class="footer__logo" href="#">
+              <i class="fas fa-graduation-cap"></i>
+              <span>TutorVic</span>
+            </a>
+            <p class="footer__description">
+              Индивидуальные занятия по математике, физике и информатике. Подготовка к ЕГЭ и ОГЭ с опытными
+              преподавателями.
+            </p>
+            <div class="footer__social">
+              <a href="https://www.avito.ru/brands/i357077454/all?sellerId=64205b3f65bcca3a453f21112dc09493" target="_blank" class="footer__social-link">
+                <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill="none" width="20" height="20" style="filter: brightness(0) invert(1);">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier"> 
+                    <g style="stroke-width:8.63157;stroke-dasharray:none"> 
+                      <path fill="#04e061" d="M61.924 172.07c26.468 0 47.924-21.456 47.924-47.924S88.392 76.222 61.924 76.222 14 97.678 14 124.146s21.456 47.925 47.924 47.925z" style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:8.63157;stroke-dasharray:none;stroke-opacity:1" transform="translate(7.024 7.024) scale(.92683)"></path> 
+                      <path fill="#ff4053" d="M149.044 166.007c15.992 0 28.956-12.963 28.956-28.955 0-15.992-12.964-28.955-28.956-28.955-15.99 0-28.954 12.963-28.954 28.955 0 15.992 12.963 28.955 28.954 28.955z" style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:8.63157;stroke-dasharray:none;stroke-opacity:1" transform="translate(7.024 7.024) scale(.92683)"></path> 
+                      <path fill="#965eeb" d="M71.086 65.979c9.898 0 17.922-8.024 17.922-17.921 0-9.898-8.024-17.922-17.922-17.922-9.898 0-17.921 8.024-17.921 17.922 0 9.897 8.023 17.921 17.921 17.921z" style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:8.63157;stroke-dasharray:none;stroke-opacity:1" transform="translate(7.024 7.024) scale(.92683)"></path> 
+                      <path fill="#0af" d="M137.789 97.856c21.519 0 38.964-17.444 38.964-38.963 0-21.52-17.445-38.964-38.964-38.964-21.52 0-38.964 17.445-38.964 38.964s17.445 38.963 38.964 38.963z" style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:8.63157;stroke-dasharray:none;stroke-opacity:1" transform="translate(7.024 7.024) scale(.92683)"></path> 
+                    </g> 
+                  </g>
+                </svg>
+              </a>
+              <a href="https://t.me/brusiya?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B5%20%D0%BF%D0%BE%20" target="_blank" class="footer__social-link">
+                <i class="fab fa-telegram"></i>
+              </a>
+              <a href="https://api.whatsapp.com/send/?phone=79962201616&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.+%D0%A5%D0%BE%D1%87%D1%83+%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F+%D0%BD%D0%B0+%D0%BF%D1%80%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5+%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B5+%D0%BF%D0%BE+&type=phone_number&app_absent=0" target="_blank" class="footer__social-link">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <!-- <a href="#" class="footer__social-link">
+                <i class="fab fa-vk"></i>
+              </a> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer__section">
+            <h4 class="footer__title">Предметы</h4>
+            <ul class="footer__list">
+              <li><a href="#" class="footer__link">Математика</a></li>
+              <li><a href="#" class="footer__link">Физика</a></li>
+              <li><a href="#" class="footer__link">Информатика</a></li>
+              <li><a href="#" class="footer__link">ЕГЭ и ОГЭ</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer__section">
+            <h4 class="footer__title">Компания</h4>
+            <ul class="footer__list">
+              <li><a href="#" class="footer__link">О нас</a></li>
+              <li><a href="#" class="footer__link">Карьера</a></li>
+              <li><a href="#" class="footer__link">Преподаватели</a></li>
+              <li><a href="#" class="footer__link">Контакты</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="footer__section">
+            <h4 class="footer__title">Контакты</h4>
+            <div class="footer__contact">
+              <div class="footer__contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Екатеринбург, ул. Спортивная, 7 </span>
+              </div>
+              <div class="footer__contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Сочи, ул. Бзугу, 6</span>
+              </div>
+              <div class="footer__contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+7 996 220 16 16</span>
+              </div>
+              <div class="footer__contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>paltusyan@gmail.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="footer__divider">
+      <div class="row">
+        <div class="col-12">
+          <div class="footer__bottom">
+            <p class="footer__copyright">
+              © 2024 TutorVic Online School. Все права защищены.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Register Modal -->
+  <div class="modal fade" id="registerModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Регистрация</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="registerName" class="form-label">Имя</label>
+              <input type="text" class="form-control" id="registerName" required>
+            </div>
+            <div class="mb-3">
+              <label for="registerEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="registerEmail" required>
+            </div>
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">Пароль</label>
+              <input type="password" class="form-control" id="registerPassword" required>
+            </div>
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Подтвердите пароль</label>
+              <input type="password" class="form-control" id="confirmPassword" required>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+              <label class="form-check-label" for="agreeTerms">
+                Я согласен с <a href="#">условиями использования</a>
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Custom JS -->
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+</html>
