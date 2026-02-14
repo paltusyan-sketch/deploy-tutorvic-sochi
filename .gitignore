@@ -14,5 +14,5 @@ __pycache__/
 local_settings.py
 
 # Собранные статические файлы и загруженные пользователями медиа
-staticfiles_collected/
+static_collected/
 media/
