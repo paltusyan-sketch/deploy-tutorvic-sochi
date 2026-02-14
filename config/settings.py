@@ -27,6 +27,8 @@ if os.path.exists('C:\\Users\\'): # Если есть папка Users, знач
 else:
     DEBUG = False
 
+
+
 ALLOWED_HOSTS = [
     '194.156.118.252',
     'tutorvic.ru',
