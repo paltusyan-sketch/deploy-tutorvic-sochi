@@ -1,7 +1,7 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
 
-<rect width="64" height="64" rx="14" fill="white"/>
+<rect width="64" height="64" rx="14" fill="#f0f0f0"/>
 
 <text x="10" y="40"
  font-family="Arial, sans-serif"
