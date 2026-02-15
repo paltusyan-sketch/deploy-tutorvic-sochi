@@ -141,9 +141,3 @@ try:
 except ImportError:
     pass
 
-
-CSRF_TRUSTED_ORIGINS = [
-    'http://tutorvic.ru',
-    'http://www.tutorvic.ru',
-    'http://194.156.118.252'
-]

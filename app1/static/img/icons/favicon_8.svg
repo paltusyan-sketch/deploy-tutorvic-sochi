@@ -1,0 +1,18 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0F0F10"/>
+
+  <!-- Нижняя ступень -->
+  <rect x="8" y="34" width="48" height="14" rx="4" fill="#2A2A2E"/>
+  <text x="32" y="42" text-anchor="middle" font-size="16"
+        fill="white" font-weight="700" font-family="Arial">
+    TV
+  </text>
+
+  <!-- Верхняя ступень -->
+  <rect x="18" y="16" width="38" height="14" rx="4" fill="#FFFFFF"/>
+  <text x="37" y="24" text-anchor="middle" font-size="14"
+        fill="#0F0F10" font-weight="700" font-family="Arial">
+    SH
+  </text>
+</svg>
